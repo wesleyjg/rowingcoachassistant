@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.wesleyg.android.rowingcoachassistant.MainActivityFragment"
+    tools:showIn="@layout/activity_main">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        android:id="@+id/SpmText"
+        android:text="00spm"
+        android:layout_alignRight="@+id/RatioText"
+        android:layout_alignEnd="@+id/RatioText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textAlignment="center" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="60sp"
+        android:text="Stroke"
+        android:id="@+id/strokeButton"
+        android:layout_below="@+id/SpmText"
+        android:layout_alignRight="@+id/RatioText"
+        android:layout_alignEnd="@+id/RatioText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Recovery:Drive"
+        android:id="@+id/RatioText"
+        android:layout_below="@+id/strokeButton"
+        android:textSize="50sp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textAlignment="center" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratioButton"
+        android:layout_below="@+id/RatioText"
+        android:layout_alignRight="@+id/RatioText"
+        android:layout_alignEnd="@+id/RatioText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="40sp"
+        android:text="Hold during drive" />
+
+
+</RelativeLayout>
