@@ -12,7 +12,12 @@ import android.widget.TextView;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class MainActivityFragment extends Fragment {
+public class StrokeRateFragment extends Fragment {
+    TextView spmText;
+    Button strokeButton;
+    TextView ratioText;
+    Button ratioButton;
+
     boolean spmTimerActive = false;
     long timeOfLastStroke;
     boolean ratioTimerActive = false;
@@ -21,17 +26,24 @@ public class MainActivityFragment extends Fragment {
     long driveDuration;
     long recoveryDuration;
 
-    public MainActivityFragment() {
+    public static StrokeRateFragment newInstance() {
+        StrokeRateFragment fragment = new StrokeRateFragment();
+        return fragment;
+    }
+
+    public StrokeRateFragment() {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
-        final TextView spmText = (TextView) rootView.findViewById(R.id.SpmText);
+        spmText = (TextView) rootView.findViewById(R.id.SpmText);
+        strokeButton = (Button) rootView.findViewById(R.id.strokeButton);
+        ratioText = (TextView) rootView.findViewById(R.id.RatioText);
+        ratioButton = (Button) rootView.findViewById(R.id.ratioButton);
 
-        final Button strokeButton = (Button) rootView.findViewById(R.id.strokeButton);
         strokeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,9 +66,6 @@ public class MainActivityFragment extends Fragment {
             }
         });
 
-        final TextView ratioText = (TextView) rootView.findViewById(R.id.RatioText);
-
-        final Button ratioButton = (Button) rootView.findViewById(R.id.ratioButton);
         ratioButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -95,7 +104,6 @@ public class MainActivityFragment extends Fragment {
                 return false;
             }
         });
-
 
         return rootView;
     }
